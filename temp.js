@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function keynavigate(ind)
     {
       paras.forEach((p) => p.classList.remove('active'));
+      imgs.forEach((i) => (i.src = 'assets/images/icon-plus.svg'));
       paras[ind].classList.add('active')
       imgs[ind].src = 'assets/images/icon-minus.svg';
     }
@@ -42,9 +43,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         if(e.key==='ArrowUp')
-        {
-          index=(index - 1 + paras.length) % paras.length;
-          keynavigate(index);
+          {
+            index=(index - 1 + paras.length) % paras.length;
+            keynavigate(index);
+            imgs[index].src = 'assets/images/icon-minus.svg';
         }
 
   })  
